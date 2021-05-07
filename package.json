@@ -17,6 +17,7 @@
   "author": "Lambda School",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "build": "^0.1.4",
     "client-sessions": "^0.8.0",
     "connect-session-knex": "^2.0.0",
     "cors": "^2.8.5",
