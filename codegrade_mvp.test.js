@@ -1,4 +1,3 @@
-// 👉 You can run these tests in your terminal by executing `npm test`
 const request = require('supertest')
 const db = require('./data/dbConfig')
 const Action = require('./api/actions/actions-model')
@@ -40,9 +39,7 @@ test('[0] sanity check', () => {
 })
 
 describe('server.js', () => {
-  // 👉 PROJECTS
-  // 👉 PROJECTS
-  // 👉 PROJECTS
+
   describe('projects endpoints', () => {
     describe('[GET] /api/projects', () => {
       test('[1] sends back all projects that exist', async () => {
@@ -129,9 +126,7 @@ describe('server.js', () => {
       }, 500)
     })
   })
-  // 👉 ACTIONS
-  // 👉 ACTIONS
-  // 👉 ACTIONS
+
   describe('actions endpoints', () => {
     describe('[GET] /api/actions', () => {
       test('[15] sends back all actions that exist', async () => {

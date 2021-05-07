@@ -1,11 +1,9 @@
-// Write your "projects" router here!
 const express = require('express');
 const Projects = require('./projects-model');
 const { validateProject, validateProjectId } = require('../middleware/middleware');
 
 const router = express.Router();
 
-// Actions Endpoints
 router.get('/', async (req, res, next) => {
     try {
         const projects = await Projects.get();
@@ -56,8 +54,7 @@ router.get('/:id/actions', validateProjectId, async (req, res, next) => {
     } catch (err) { next(err) }
 });
 
-// Error Handling
-router.use((err, req, res, next) => { // eslint-disable-line
+router.use((err, req, res, next) => { 
     res.status(500).json({
         message: err.message,
         stack: err.stack,
@@ -65,5 +62,5 @@ router.use((err, req, res, next) => { // eslint-disable-line
     });
 });
 
-// Export
+
 module.exports = router;

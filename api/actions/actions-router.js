@@ -1,12 +1,9 @@
-// Write your "actions" router here!
-// Write your "actions" router here!
 const express = require('express');
 const Actions = require('./actions-model');
 const { validateActionId, validateAction, validateProjectId } = require('../middleware/middleware');
 
 const router = express.Router();
 
-// Actions Endpoints
 router.get('/', async (req, res, next) => {
     try {
         const actions = await Actions.get();
@@ -45,18 +42,17 @@ router.delete('/:id', validateActionId, async (req, res, next) => {
         const deletedAction = await Actions.remove(id);
         deletedAction
             ? res.json({ message: `Action with id ${id} successfully deleted` })
-            : res.status(500).json({ message: "Deletion failed, please try again" })
+            : res.status(500).json({ message: "Deletion has gone failed, please try again" })
     } catch (err) { next(err) }
 });
 
-// Error Handling
-router.use((err, req, res, next) => { // eslint-disable-line
+router.use((err, req, res, next) => {
     res.status(500).json({
         message: err.message,
         stack: err.stack,
-        custom: "Something went wrong in the actions router"
+        custom: "Something went crazy wrong in the actions router"
     });
 });
 
-// Export
+
 module.exports = router;
