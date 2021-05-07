@@ -1,10 +1,10 @@
-// DO NOT CHANGE THIS FILE
-exports.seed = function (knex) {
+exports.seed = function(knex) {
   return knex('actions').insert([
     {
       project_id: 1,
       description: 'Fork and Clone Repository',
-      notes: 'Repo URL: https://github.com/LambdaSchool/node-api-challenge',
+      notes:
+        'Repo URL: https://github.com/LambdaSchool/Sprint-Challenge-Node-Express',
     },
     {
       project_id: 1,

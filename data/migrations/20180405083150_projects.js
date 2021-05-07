@@ -1,4 +1,3 @@
-// DO NOT CHANGE THIS FILE
 exports.up = function(knex) {
     return knex.schema.createTable("projects", function(projects) {
         projects.increments();
